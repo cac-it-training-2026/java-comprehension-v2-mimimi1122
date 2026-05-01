@@ -1,7 +1,6 @@
-package q02_advanced.question02;
+package q02_advanced.question03;
 
 class Coupon {
-
 	private int id;
 	private double discountRate;
 	private String description;
@@ -17,37 +16,12 @@ class Coupon {
 	}
 
 	public static Coupon getInstance(int id, double discountRate, String description) {
-		Coupon coupon = new Coupon(id, discountRate, description);
-		return coupon;
+		return new Coupon(id, discountRate, description);
+
 	}
 
 	@Override
 	public String toString() {
 		return "Coupon [id=" + id + ", discountRate=" + discountRate + ", description=" + description + "]";
-
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public double getDiscountRate() {
-		return discountRate;
-	}
-
-	public void setDiscountRate(double discountRate) {
-		this.discountRate = discountRate;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 }

@@ -1,6 +1,6 @@
 package q02_advanced.question01;
 
-public class Coupon {
+class Coupon {
 	private int id;
 	private double discountRate;
 	private String description;

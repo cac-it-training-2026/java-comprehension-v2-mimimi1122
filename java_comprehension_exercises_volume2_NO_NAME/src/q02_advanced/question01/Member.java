@@ -3,7 +3,7 @@ package q02_advanced.question01;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Member {
+class Member {
 	private int id;
 	private String password;
 	private String name;

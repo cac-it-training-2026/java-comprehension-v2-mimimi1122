@@ -1,7 +1,6 @@
-package q02_advanced.question02;
+package q02_advanced.question03;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 class Member {
@@ -10,7 +9,6 @@ class Member {
 	private String name;
 	private int age;
 	private int rank;
-
 	private List<Coupon> coupons;
 
 	public Member() {
@@ -23,28 +21,30 @@ class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
-		this.coupons = new ArrayList<>();
+		this.coupons = new ArrayList<Coupon>();
+
 	}
 
+	public static Member getInstance(int id, String password, String name, int age, int rank) {
+		Member member = new Member(id, password, name, age, rank);
+
+		Coupon coupon1 = Coupon.getInstance(1, 0.5, "最初の特典");
+		Coupon coupon2 = Coupon.getInstance(2, 0.25, "今月の特典");
+
+		member.getCoupons().add(coupon1);
+		member.getCoupons().add(coupon2);
+
+		return member;
+	}
+
+	@Override
 	public String toString() {
 		return "Member [id=" + id + ", password=" + password + ", name=" + name + ", age=" + age
 				+ ", rank=" + rank + ", coupons=" + coupons + "]";
 	}
 
 	public void showMember() {
-		System.out.println(toString());
-		System.out.println("******************");
-
-	}
-
-	public static Member getInstance(int id, String password, String name, int age, int rank) {
-		Member member = new Member(id, password, name, age, rank);
-		Coupon coupon1 = Coupon.getInstance(1, 0.5, "最初の特典");
-		Coupon coupon2 = Coupon.getInstance(2, 0.25, "今月の特典");
-		member.setCoupons(Arrays.asList(coupon1, coupon2));
-
-		return member;
-
+		System.out.println(this.toString());
 	}
 
 	public int getId() {
@@ -94,4 +94,5 @@ class Member {
 	public void setCoupons(List<Coupon> coupons) {
 		this.coupons = coupons;
 	}
+
 }

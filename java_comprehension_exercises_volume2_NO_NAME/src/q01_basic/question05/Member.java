@@ -1,6 +1,6 @@
 package q01_basic.question05;
 
-public class Member extends AbstMember {
+class Member extends AbstMember {
 
 	private int id;
 	private String password;
